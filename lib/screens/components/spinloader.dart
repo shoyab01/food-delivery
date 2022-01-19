@@ -1,15 +1,15 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:food_delivery/ThemeData/fontstyle.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
-Widget spinLoader(double w, double h) {
+// Colors.blue.shade300
+Widget spinLoader(double w, double h, Color color) {
   return Container(
       width: w,
       height: h,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(50),
-        color: Colors.blue.shade300,
+        color: color,
       ),
       child: Center(
         child: SpinKitChasingDots(

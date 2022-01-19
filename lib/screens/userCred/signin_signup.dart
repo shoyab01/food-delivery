@@ -185,7 +185,7 @@ class _SignInSignUpState extends State<SignInSignUp>
 
   Widget socialMediaLogin() {
     return isLoadingGoogle
-        ? spinLoader(150.h, 150.h)
+        ? spinLoader(150.h, 150.h, Colors.teal)
         : Container(
             width: 150.h,
             height: 150.h,
@@ -405,7 +405,7 @@ class _SignInSignUpState extends State<SignInSignUp>
   }
 
   Widget title() {
-    return Text(_currentPage, style: FontStyle.productsansBold(null, 110));
+    return Text(_currentPage, style: FontStyle.productsansBold(null, 100));
   }
 
   Widget buildTitle() {
@@ -449,7 +449,7 @@ class _SignInSignUpState extends State<SignInSignUp>
         children: [
           buildTitle(),
           Spacer(
-            flex: 1,
+            flex: 2,
           ),
           buildInputsAndButton(context),
           Spacer(

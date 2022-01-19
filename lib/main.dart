@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:food_delivery/screens/user_cred/reset_pass.dart';
-import 'package:food_delivery/screens/user_cred/signin_signup.dart';
+import 'package:food_delivery/screens/mainScreen.dart';
+import 'package:food_delivery/screens/userCred/resetPass.dart';
+import 'package:food_delivery/screens/userCred/signInSignUp.dart';
 
 import 'ThemeData/fontstyle.dart';
 
@@ -28,8 +29,9 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => SignInSignUp(),
         'reset_password': (context) => ResetPassword(),
+        'main_screen': (context) => MainScreen(currentIndex: 0,),
       },
-      initialRoute: '/',
+      initialRoute: 'main_screen',
     );
   }
 }
