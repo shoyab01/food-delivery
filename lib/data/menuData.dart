@@ -1,9 +1,9 @@
 import 'package:food_delivery/models/foodModel.dart';
 
-final foods = [
+final menus = [
   FoodData(
     id: "1",
-    name: "Mehfil",
+    name: "Pizza",
     imagePath: "assets/images/food.jpeg",
     category: "Vegetable",
     price: 33.0,
@@ -12,7 +12,7 @@ final foods = [
   ),
   FoodData(
     id: "2",
-    name: "Fast Food",
+    name: "Burger",
     imagePath: "assets/images/junk.jpeg",
     category: "Fast Food",
     price: 43.0,
@@ -21,7 +21,7 @@ final foods = [
   ),
   FoodData(
     id: "3",
-    name: "Cofee House",
+    name: "Banana Milk Shake",
     imagePath: "assets/images/verCofee.jpeg",
     category: "Cofee",
     price: 20.0,
@@ -30,7 +30,7 @@ final foods = [
   ),
   FoodData(
     id: "4",
-    name: "Icecream Parlour",
+    name: "Icecream",
     imagePath: "assets/images/food.jpeg",
     category: "Vegetable",
     price: 37.0,
@@ -39,7 +39,7 @@ final foods = [
   ),
   FoodData(
     id: "5",
-    name: "Bahar Cafe",
+    name: "Biryani",
     imagePath: "assets/images/food.jpeg",
     category: "Chicken Biryani",
     price: 37.0,
@@ -48,7 +48,7 @@ final foods = [
   ),
   FoodData(
     id: "6",
-    name: "Ulavacharu",
+    name: "Sandwich",
     imagePath: "assets/images/junk.jpeg",
     category: "Vegetable",
     price: 37.0,
@@ -57,7 +57,7 @@ final foods = [
   ),
   FoodData(
     id: "7",
-    name: "Paradise",
+    name: "Soup",
     imagePath: "assets/images/verCofee.jpeg",
     category: "Vegetable",
     price: 37.0,
@@ -66,7 +66,7 @@ final foods = [
   ),
   FoodData(
     id: "8",
-    name: "Bidri",
+    name: "Shawarma",
     imagePath: "assets/images/food.jpeg",
     category: "Vegetable",
     price: 37.0,

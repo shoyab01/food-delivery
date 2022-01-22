@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:food_delivery/ThemeData/fontstyle.dart';
 import 'package:food_delivery/data/foodData.dart';
 import 'package:food_delivery/models/foodModel.dart';
-import 'package:food_delivery/screens/components/foodBought.dart';
 import 'package:food_delivery/screens/components/foodCategory.dart';
 import 'package:food_delivery/screens/components/searchBar.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -47,7 +46,7 @@ class _HomeState extends State<Home> {
         child: Column(
           children: <Widget>[
             Container(
-              height: MediaQuery.of(context).size.height / 4,
+              height: MediaQuery.of(context).size.height / 5 + 20,
               child: Column(
                 children: [
                   Spacer(),
@@ -106,16 +105,75 @@ class _HomeState extends State<Home> {
   }
 
   Widget buildFoodBought(FoodData food) {
-    return Container(
-      margin: EdgeInsets.only(bottom: 20.0),
-      child: BoughtFood(
-        imagePath: food.imagePath,
-        id: food.id,
-        name: food.name,
-        price: food.price,
-        discount: food.discount,
-        ratings: food.ratings,
-        category: food.category,
+    return InkWell(
+      onTap: () {
+        Navigator.pushNamed(context, "menu", arguments: {'resName': food.name});
+      },
+      child: Card(
+        child: Padding(
+          padding: EdgeInsets.symmetric(vertical: 7, horizontal: 5),
+          child: Row(
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    height: 60.0,
+                    width: 60.0,
+                    child: Image.asset(
+                      food.imagePath,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 3,
+                  ),
+                  Text(
+                    "Ameerpet",
+                    style: FontStyle.productsansMedium(null, 36),
+                  )
+                ],
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              Flexible(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      food.name,
+                      style: FontStyle.productsansBold(null, 40),
+                    ),
+                    SizedBox(
+                      height: 2,
+                    ),
+                    RatingBarIndicator(
+                      rating: 2.75,
+                      itemBuilder: (context, index) => Icon(
+                        Icons.star,
+                        color: Colors.amber,
+                      ),
+                      itemCount: 5,
+                      itemSize: 15.0,
+                      direction: Axis.horizontal,
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Text(
+                      "We imagine a world where there are no barriers between Boston residents, sloppily produced pizza doesn’t exist, and local farmers are able to live prosperously.",
+                      maxLines: 2,
+                      textAlign: TextAlign.left,
+                      overflow: TextOverflow.ellipsis,
+                      softWrap: false,
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
