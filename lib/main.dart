@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
         'menu': (context) => Menu(),
         'place_order': (context) => PlaceOrder(),
       },
-      initialRoute: 'main_screen',
+      initialRoute: '/',
     );
   }
 }

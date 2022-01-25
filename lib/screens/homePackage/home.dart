@@ -23,6 +23,7 @@ class _HomeState extends State<Home> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Icon(
                   Icons.location_on,
@@ -46,12 +47,30 @@ class _HomeState extends State<Home> {
         child: Column(
           children: <Widget>[
             Container(
-              height: MediaQuery.of(context).size.height / 5 + 20,
+              height: MediaQuery.of(context).size.height / 3 + 20,
               child: Column(
                 children: [
                   Spacer(),
                   SearchBar(),
                   Spacer(),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      "Frequently visited restaurants",
+                      textAlign: TextAlign.start,
+                      style: FontStyle.productsansRegular(null, 40),
+                    ),
+                  ),
+                  FoodCategory(),
+                  Spacer(),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      "Frequently ordered food",
+                      textAlign: TextAlign.start,
+                      style: FontStyle.productsansRegular(null, 40),
+                    ),
+                  ),
                   FoodCategory(),
                   Spacer(),
                   Divider(),
